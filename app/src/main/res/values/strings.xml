@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">SensorWave</string>
+    <string name="waveform">Waveform:</string>
+    <string name="sine">Sine</string>
+    <string name="harmonics">Harmonics</string>
+    <string name="square">Square</string>
+    <string name="saw1">Saw-1</string>
+    <string name="saw2">Saw-2</string>
+    <string name="saw3">Saw-3</string>
+    <string name="control_by">Use sensor:</string>
+    <string name="max">max</string>
+    <string name="play">PLAY</string>
+    <string name="stop">STOP</string>
+    <string name="min">min</string>
+    <string name="frequency_hz">Frequency, Hz</string>
+    <string name="magnet">Magnet</string>
+    <string name="moving">Moving</string>
+    <string name="luminosity">Luminosity</string>
+    <string name="musical_notes">Musical notes</string>
+    <string name="intermediate">Intermediate</string>
+    <string name="continuously">Continuously</string>
+    <string name="echo_duration_ms">Echo duration, ms</string>
+    <string name="echo_volume">Echo volume, %</string>
+    <string name="sound_fading">Sound fading, ms</string>
+    <string name="sound_duration">Sound duration, ms</string>
+    <string name="control_sensitivity">Sensor sensitivity, %</string>
+
+    <string name="saved_echo_volume_key">saved_echo_volume_key</string>
+    <string name="saved_echo_duration_key">saved_echo_duration_key</string>
+    <string name="saved_sensitivity_key">saved_sensitivity_key</string>
+    <string name="saved_sound_duration_key">saved_sound_duration_key</string>
+    <string name="saved_sound_fading_key">saved_sound_fading_key</string>
+    <string name="saved_waveform_key">saved_waveform_key</string>
+    <string name="saved_sensor_key">saved_sensor_key</string>
+    <string name="saved_min_note_key">saved_min_note_key</string>
+    <string name="saved_max_note_key">saved_max_note_key</string>
+    <string name="saved_intermediate_key">saved_intermediate_key</string>
+    <string name="saved_continuously_key">saved_continuously_key</string>
+    <string name="saved_use_notes_key">saved_use_notes_key</string>
+    <string name="btn_stop">STOP</string>
+    <string name="btn_play">PLAY</string>
+
+
+</resources>

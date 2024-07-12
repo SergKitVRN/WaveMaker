@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/touchArea"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.wavemaker.MainActivity">
+
+    <TextView
+        android:id="@+id/textViewFrequency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/frequency_hz"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.01"/>
+
+    <TextView
+        android:id="@+id/textViewMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/min"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewFrequency"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFrequency"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.01" />
+
+    <TextView
+        android:id="@+id/textViewMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/max"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewFrequency"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintTop_toTopOf="@+id/textViewMin"
+        />
+
+    <NumberPicker
+        android:id="@+id/numberPickerMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#7986CB"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewFrequency"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.01" />
+
+    <NumberPicker
+        android:id="@+id/numberPickerMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#E57373"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewMax"
+        app:layout_constraintTop_toTopOf="@+id/numberPickerMin" />
+
+    <TextView
+        android:id="@+id/textViewMinNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="---"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@+id/numberPickerMin"
+        app:layout_constraintTop_toBottomOf="@+id/numberPickerMin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.02" />
+
+    <TextView
+        android:id="@+id/textViewMaxNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="---"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@+id/numberPickerMax"
+        app:layout_constraintTop_toTopOf="@+id/textViewMinNote" />
+
+    <Button
+        android:id="@+id/buttonPlayStop"
+        android:layout_width="149dp"
+        android:layout_height="51dp"
+        android:layout_gravity="center"
+        android:text="@string/play"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/textViewFrequency"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toTopOf="@+id/textViewFrequency" />
+
+    <TextView
+        android:id="@+id/textViewControlBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/control_by"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="@+id/buttonPlayStop"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPlayStop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.01" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupControlBy"
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        app:layout_constraintLeft_toLeftOf="@+id/buttonPlayStop"
+        app:layout_constraintTop_toBottomOf="@+id/textViewControlBy" >
+
+        <RadioButton
+            android:id="@+id/radioButtonMagnet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="@string/magnet"
+            android:textSize="20sp"
+            android:tag="0"/>
+
+        <RadioButton
+            android:id="@+id/radioButtonMoving"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:checked="true"
+            android:text="@string/moving"
+            android:textSize="20sp"
+            android:tag="1"/>
+
+        <RadioButton
+            android:id="@+id/radioButtonLuminosity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="@string/luminosity"
+            android:textSize="20sp"
+            android:tag="2"/>
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/checkBoxUseNotes"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:checked="true"
+        android:text="@string/musical_notes"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@+id/radioGroupControlBy"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupControlBy" />
+
+    <CheckBox
+        android:id="@+id/checkBoxIntermediate"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="@string/intermediate"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@+id/radioGroupControlBy"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxUseNotes" />
+
+    <CheckBox
+        android:id="@+id/checkBoxContinuously"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:checked="true"
+        android:text="@string/continuously"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@+id/radioGroupControlBy"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxIntermediate" />
+
+    <TextView
+        android:id="@+id/textViewEchoDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/echo_duration_ms"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewFrequency"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxContinuously" />
+    <TextView
+        android:id="@+id/textViewEchoDurationVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewSensitivityVal"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewEchoDuration" />
+    <SeekBar
+        android:id="@+id/seekBarEchoDuration"
+        style="@style/Widget.AppCompat.SeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEchoDuration" />
+
+    <TextView
+        android:id="@+id/textViewEchoVolume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/echo_volume"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewFrequency"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxContinuously"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.12" />
+    <TextView
+        android:id="@+id/textViewEchoVolumeVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewSensitivityVal"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewEchoVolume" />
+    <SeekBar
+        android:id="@+id/seekBarEchoVolume"
+        style="@style/Widget.AppCompat.SeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEchoVolume" />
+
+    <TextView
+        android:id="@+id/textViewSoundDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sound_duration"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewFrequency"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxContinuously"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.24" />
+    <TextView
+        android:id="@+id/textViewSoundDurationVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewSensitivityVal"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewSoundDuration" />
+    <SeekBar
+        android:id="@+id/seekBarSoundDuration"
+        style="@style/Widget.AppCompat.SeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSoundDuration" />
+
+    <TextView
+        android:id="@+id/textViewSoundFading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sound_fading"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewFrequency"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxContinuously"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.36" />
+    <TextView
+        android:id="@+id/textViewSoundFadingVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewSensitivityVal"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewSoundFading" />
+    <SeekBar
+        android:id="@+id/seekBarSoundFading"
+        style="@style/Widget.AppCompat.SeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSoundFading" />
+
+    <TextView
+        android:id="@+id/textViewSensitivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/control_sensitivity"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewFrequency"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxContinuously"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.48"  />
+    <TextView
+        android:id="@+id/textViewSensitivityVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toRightOf="@+id/textViewSensitivity"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewSensitivity" />
+    <SeekBar
+        android:id="@+id/seekBarSensitivity"
+        style="@style/Widget.AppCompat.SeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSensitivity" />
+
+    <TextView
+        android:id="@+id/textViewWaveform"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/waveform"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarSensitivity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.01"  />
+
+    <RadioGroup
+        android:id="@+id/radioGroupWaveform1"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWaveform" >
+
+        <RadioButton
+            android:id="@+id/radioButtonSine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/sine"
+            android:textSize="20sp"
+            android:tag="0" />
+
+        <RadioButton
+            android:id="@+id/radioButtonHarmonics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/harmonics"
+            android:textSize="20sp"
+            android:tag="1" />
+
+        <RadioButton
+            android:id="@+id/radioButtonSquare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/square"
+            android:textSize="20sp"
+            android:tag="2" />
+    </RadioGroup>
+    <RadioGroup
+        android:id="@+id/radioGroupWaveform2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupWaveform1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0"  >
+        <RadioButton
+            android:id="@+id/radioButtonSaw1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/saw1"
+            android:textSize="20sp"
+            android:tag="3"
+            />
+
+        <RadioButton
+            android:id="@+id/radioButtonSaw2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/saw2"
+            android:textSize="20sp"
+            android:tag="4" />
+
+        <RadioButton
+            android:id="@+id/radioButtonSaw3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/saw3"
+            android:textSize="20sp"
+            android:tag="5" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textureView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="-----"
+        android:textSize="40sp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupWaveform2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#ABCDEF"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
